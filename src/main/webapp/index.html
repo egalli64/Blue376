@@ -96,9 +96,6 @@
 						<li class="nav-item"><a class="nav-link active"
 							data-toggle="tab" href="#panel7" role="tab"><i
 								class="fas fa-user mr-1"></i> Login</a></li>
-						<li class="nav-item"><a class="nav-link" data-toggle="tab"
-							href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
-								Register</a></li>
 					</ul>
 
 					<!-- Tab panels -->
@@ -147,6 +144,29 @@
 
 							<!--Footer-->
 							<div class="modal-footer">
+
+
+								<div class="options text-right">
+									<p class="pt-1">Not registered?
+									<form action="/blue/login/registration">
+
+										<div class="md-form form-sm mb-4">
+											<input type="radio" class="btn-check" name="options-outlined"
+												id="patient-outlined" autocomplete="off"
+												value="patientbutton"> <label
+												class="btn btn-outline-success" for="success-outlined">Patient
+											</label> <input type="radio" class="btn-check"
+												name="options-outlined" id="doctor-outlined"
+												autocomplete="off" value="doctorbutton" required> <label
+												class="btn btn-outline-danger" for="danger-outlined">Doctor</label>
+
+										</div>
+
+										<button type="submit" class="btn btn-info">
+											Sign up <i class="fas fa-sign-in ml-1"></i>
+										</button>
+									</form>
+								</div>
 								<button type="button"
 									class="btn btn-outline-info waves-effect ml-auto"
 									data-dismiss="modal">Close</button>
@@ -155,71 +175,7 @@
 						</div>
 
 
-						<!--Panel 8-->
-						<div class="tab-pane fade" id="panel8" role="tabpanel">
 
-							<!-- -----------------------------------------Registration form -->
-							<form action="/blue/login/registration">
-								<!--Body-->
-								<div class="modal-body">
-
-									<div class="md-form form-sm mb-5">
-										<i class="fas fa-envelope prefix"></i> <input name="user"
-											id="modalLRInput10"
-											class="form-control form-control-sm validate" required>
-										<label data-error="wrong" data-success="right"
-											for="modalLRInput10">Your username</label>
-									</div>
-
-									<div class="md-form form-sm mb-5">
-										<i class="fas fa-lock prefix"></i> <input name="password"
-											type="password" id="modalLRInput13"
-											class="form-control form-control-sm validate"> <label
-											data-error="wrong" data-success="right" for="modalLRInput13">Your
-											password</label>
-									</div>
-
-									<div class="md-form form-sm mb-4">
-										<i class="fas fa-lock prefix"></i> <input type="password"
-											id="modalLRInput14"
-											class="form-control form-control-sm validate"> <label
-											data-error="wrong" data-success="right" for="modalLRInput14">Repeat
-											password</label>
-									</div>
-
-									<div class="md-form form-sm mb-4">
-										<input type="radio" class="btn-check" name="options-outlined"
-											id="patient-outlined" autocomplete="off"
-											value="patientbutton" checked> <label
-											class="btn btn-outline-success" for="success-outlined">Patient
-										</label> <input type="radio" class="btn-check" name="options-outlined"
-											id="doctor-outlined" autocomplete="off" value="doctorbutton">
-										<label class="btn btn-outline-danger" for="danger-outlined">Doctor</label>
-									</div>
-
-									<div class="text-center form-sm mt-2">
-										<button type="submit" class="btn btn-info">
-											Sign up <i class="fas fa-sign-in ml-1"></i>
-										</button>
-									</div>
-
-								</div>
-
-
-
-								<!--Footer-->
-								<div class="modal-footer">
-									<div class="options text-right">
-										<p class="pt-1">
-											Already have an account? <a href="#" class="blue-text">Log
-												In</a>
-										</p>
-									</div>
-									<button type="button"
-										class="btn btn-outline-info waves-effect ml-auto"
-										data-dismiss="modal">Close</button>
-								</div>
-						</div>
 						<!--/.Panel 8-->
 					</div>
 

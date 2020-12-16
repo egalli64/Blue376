@@ -30,26 +30,8 @@ public class Registration extends HttpServlet {
 		String password = request.getParameter("password");
 		String optionsOutlined = request.getParameter("options-outlined");
 
-		if (user == null || user.isBlank()) {
-			LOG.warning("No user passed as parameter!");
-//            request.getRequestDispatcher("/indexSecond.jsp").forward(request, response);
-		}
-		else {
-			LOG.info("username is " + user);
-			session.setAttribute("user", user);
-		}
-
-		if (password == null || password.isBlank()) {
-			LOG.warning("No password passed as parameter!");
-//            request.getRequestDispatcher("/indexSecond.jsp").forward(request, response);
-		}
-		else {
-			LOG.info("password is " + password);
-			session.setAttribute("password", password);
-		}
-
 		if (optionsOutlined.equals("doctorbutton")) {
-//			request.getRequestDispatcher("loggedAsDoctor.jsp").forward(request, response);
+			request.getRequestDispatcher("doctorRegistration.jsp").forward(request, response);
 		}
 		else if (optionsOutlined.equals("patientbutton")) {
 			request.getRequestDispatcher("patientRegistration.jsp").forward(request, response);
