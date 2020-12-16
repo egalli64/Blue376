@@ -61,7 +61,7 @@
 			<div class="form-group col-md-1"></div>
 			<div class="form-group col-md-4">
 				<label for="inputEmail4">Name</label> <input type="text"
-					class="form-control" id="inputEmail4" placeholder="Email">
+					class="form-control" id="inputEmail4" placeholder="Name">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputEmail4">Surname</label> <input type="email"
