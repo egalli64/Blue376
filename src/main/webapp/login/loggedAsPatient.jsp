@@ -18,7 +18,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
-
+	<link rel="stylesheet" type="text/css" href="/blue/login/index.css">
 </head>
 
 <body>
@@ -71,9 +71,10 @@
 				</form>
 			</div>
 
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0" id="userNameNavBar">
+				<li>Welcome </li>
 				<li></li>
-				<li><a>${user}</a></li>
+				<li><a>: ${user}</a></li>
 
 			</ul>
 		</div>
@@ -87,7 +88,7 @@
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">
-				<div class="jumbotron">
+				<div class="jumbotron" id="patientJumbo">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-3"></div>

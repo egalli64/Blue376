@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+#colorJumbo {
+	background-image:
+		url("https://upload.wikimedia.org/wikipedia/commons/e/e4/Doctor_with_Patient_Cartoon.svg");
+	background-size: cover;
+}
+
+#userNameNavBar{
+	color: rgb(255, 255, 255);
+}

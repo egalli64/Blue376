@@ -18,7 +18,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
-
+<link rel="stylesheet" type="text/css" href="/blue/login/index.css">
 </head>
 
 <body>
@@ -71,9 +71,9 @@
 				</form>
 			</div>
 
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li></li>
-				<li><a>Dr. ${user}</a></li>
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0" id="userNameNavBar">
+				<li>Welcome </li>
+				<li><a>: Dr. ${user}</a></li>
 
 			</ul>
 		</div>
@@ -81,10 +81,10 @@
 
 
 
-	<h1> Welcome Dr. ${user}</h1>
+	<h1>Welcome Dr. ${user}</h1>
 
-<div>
-      <a href="/blue/index.html" class="btn btn-danger">Log out</a>
-</div>
+	<div>
+		<a href="/blue/index.html" class="btn btn-danger">Log out</a>
+	</div>
 </body>
 </html>
