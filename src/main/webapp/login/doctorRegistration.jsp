@@ -116,7 +116,9 @@
 		<div class="form-group col-md-4"></div>
 	</form>
 
-
+	<div>
+		<a href="/blue/index.html" class="btn btn-danger">Log out</a>
+	</div>
 </body>
 
 
