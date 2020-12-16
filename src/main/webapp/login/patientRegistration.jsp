@@ -64,8 +64,8 @@
 					class="form-control" id="inputEmail4" placeholder="Name">
 			</div>
 			<div class="form-group col-md-4">
-				<label for="inputEmail4">Surname</label> <input type="email"
-					class="form-control" id="inputEmail4" placeholder="Email">
+				<label for="inputEmail4">Surname</label> <input type="text"
+					class="form-control" id="inputEmail4" placeholder="Surname">
 			</div>
 			<div class="form-group col-md-3"></div>
 		</div>
@@ -74,7 +74,7 @@
 			<div class="form-group col-md-1"></div>
 			<div class="form-group col-md-4">
 				<label for="inputPassword4">Email</label> <input type="email"
-					class="form-control" id="inputPassword4" placeholder="Password">
+					class="form-control" id="inputPassword4" placeholder="email@email.mail">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputPassword4">Password</label> <input type="password"
