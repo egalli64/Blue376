@@ -29,7 +29,7 @@
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-					<h1 class="display-4">Blue</h1>
+					<h1 class="main-title">Blue</h1>
 				</div>
 				<div class="col-sm-4"></div>
 			</div>

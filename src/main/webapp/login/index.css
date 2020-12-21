@@ -1,11 +1,42 @@
 @charset "UTF-8";
 
+@import
+	url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#main-title{
+	font-family: 'Roboto', sans-serif;
+}
+
+.navbar-nav #homeButton {
+	font-family: 'Days One', sans-serif;
+}
+
 #colorJumbo {
-	background-image:
-		url("/blue/images/doc_pat.png");
+	background-image: url("/blue/images/doc_pat.png");
 	background-size: cover;
 }
 
-#userNameNavBar{
+#userNameNavBar {
 	color: rgb(255, 255, 255);
+}
+
+#LogInNavBar {
+	color: rgb(255, 255, 255);
+}
+
+#RegisterNavBar {
+	color: rgb(255, 255, 255);
+}
+
+#footJumbo {
+	margin-bottom: 0 !important;
+	padding-top: 3px;
+	padding-bottom: 4px;
+}
+
+.hide {
+	display: none;
 }

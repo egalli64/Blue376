@@ -19,9 +19,13 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/blue/login/index.css">
+
 <script type="text/javascript" src="/blue/login/index.js" defer></script>
 
-
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+	crossorigin="anonymous"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jQuery UI Datepicker - Default functionality</title>
@@ -48,12 +52,24 @@
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-					<h1 class="display-4">Blue</h1>
+					<h1 class="main-title">Blue</h1>
 				</div>
 				<div class="col-sm-4"></div>
 			</div>
 		</div>
 	</div>
+
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item"><a href="/blue/index.html"
+					class="nav-link active" aria-current="page" href="#"
+					id="homeButton">Home</a></li>
+			</ul>
+		</div>
+
+	</nav>
 
 	<!-- Registration data form -->
 	<form>
@@ -61,11 +77,11 @@
 			<div class="form-group col-md-1"></div>
 			<div class="form-group col-md-4">
 				<label for="inputEmail4">Name</label> <input type="text"
-					class="form-control" id="inputEmail4" placeholder="Name">
+					class="form-control" id="name" placeholder="Name">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputEmail4">Surname</label> <input type="text"
-					class="form-control" id="inputEmail4" placeholder="Surname">
+					class="form-control" id="surname" placeholder="Surname">
 			</div>
 			<div class="form-group col-md-3"></div>
 		</div>
@@ -74,37 +90,56 @@
 			<div class="form-group col-md-1"></div>
 			<div class="form-group col-md-4">
 				<label for="inputPassword4">Email</label> <input type="email"
-					class="form-control" id="inputPassword4" placeholder="Email@email.mail">
+					class="form-control" id="mail"
+					placeholder="Email@email.mail">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="inputPassword4">Password</label> <input type="password"
-					class="form-control" id="inputPassword4" placeholder="Password">
+					class="form-control" id="password" placeholder="Password">
 			</div>
 		</div>
 
 		<div class="form-row">
 			<div class="form-group col-md-1"></div>
-			<div class="form-group col-md-4">
-				<label for="inputPassword4">Address</label> <input type="text"
-					class="form-control" id="inputPassword4"
-					placeholder="Via Maurizio Quadrio, n. 17, MI">
-			</div>
 
 			<div class="form-group col-md-4">
 				<label for="inputPassword4">Birth date: </label><input type="date"
-					class="form-control" id="datepicker">
+					class="form-control" id="birthdate">
 			</div>
+			<div class="form-group col-md-1"></div>
 
+			<div class="form-group col-md-4">
+
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio"
+						name="options-outlined" id="exampleRadios1" value="accountPatient"
+						checked onclick="show1()"> <label class="form-check-label"
+						for="exampleRadios1"> Patient </label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio"
+						name="options-outlined" id="exampleRadios2" value="accountDoctor"
+						onclick="show2()"> <label class="form-check-label"
+						for="exampleRadios2"> Doctor </label>
+				</div>
+
+			</div>
 		</div>
 
-		<div class="form-row">
-			<div class="form-group col-md-1"></div>
-			<div class="form-group col-md-4">
-				<label for="inputPassword4">Specialization</label> <input
-					type="text" class="form-control" id="specialization"
-					placeholder="Specialization">
+		<div id="div1" class="hide">
+			<div class="form-row">
+				<div class="form-group col-md-1"></div>
+				<div class="form-group col-md-4">
+					<label for="inputPassword4">Address</label> <input type="text"
+						class="form-control leo" id="address"
+						placeholder="Via Maurizio Quadrio, n. 17, MI">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputPassword4">Specialization</label> <input
+						type="text" class="form-control leo" id="specialization"
+						placeholder="Specialization">
+				</div>
 			</div>
-			<div class="form-group col-md-4"></div>
 		</div>
 
 		<div class="form-row">
@@ -116,9 +151,11 @@
 		<div class="form-group col-md-4"></div>
 	</form>
 
-	<div>
-		<a href="/blue/index.html" class="btn btn-danger">Log out</a>
+
+	<div class="jumbotron jumbotron-fluid fixed-bottom" id="footJumbo">
+		<div>BLUE (C) 2020</div>
 	</div>
+
 </body>
 
 
