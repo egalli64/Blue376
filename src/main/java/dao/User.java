@@ -52,6 +52,10 @@ public class User {
     public int getId() {
 	return id;
     }
+    
+    public int getId(String email) {
+	return id;
+    }
 
     public void setId(int id) {
 	this.id = id;

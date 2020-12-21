@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,10 +42,10 @@ public class FindUser extends HttpServlet {
 		return;
 	    }
 
-//	    RegionDao regions = new RegionDao();
 	    UserDao users = new UserDao();
 
 	    Optional<User> opt = users.read(id);
+	    
 	    if (opt.isPresent()) {
 		LOG.trace("id inserted" + id);
 		writer.println("user found: " + opt.get());
