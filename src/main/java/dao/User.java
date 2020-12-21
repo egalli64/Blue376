@@ -28,8 +28,8 @@ public class User {
     @Column(name = "EMAIL")
     private String email;
 
-    @Column(name = "PHONE_NUMBER")
-    private String phone_number;
+    @Column(name = "PHONENUMBER")
+    private String phoneNumber;
 
     @Column(name = "BIRTHDAY")
     private LocalDate birthday;
@@ -44,17 +44,9 @@ public class User {
 
     }
 
-    public User(int id, String name, String surname, String email, String phone_number, LocalDate birthday,
-	    String password, String account) {
-	super();
-	this.id = id;
+    public User(String name) {
+
 	this.name = name;
-	this.surname = surname;
-	this.email = email;
-	this.phone_number = phone_number;
-	this.birthday = birthday;
-	this.password = password;
-	this.account = account;
     }
 
     public int getId() {
@@ -89,12 +81,12 @@ public class User {
 	this.email = email;
     }
 
-    public String getPhone_number() {
-	return phone_number;
+    public String getPhoneNumber() {
+	return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-	this.phone_number = phone_number;
+    public void setPhoneNumber(String phone_number) {
+	this.phoneNumber = phone_number;
     }
 
     public LocalDate getBirthday() {
@@ -123,6 +115,6 @@ public class User {
 
     @Override
     public String toString() {
-	return "Region [id=" + id + ", name=" + name + "]";
+	return "User [id=" + id + ", name=" + name + "]";
     }
 }
