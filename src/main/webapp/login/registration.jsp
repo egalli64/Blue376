@@ -72,15 +72,15 @@
 	</nav>
 
 	<!-- Registration data form -->
-	<form>
+	<form action="registration">
 		<div class="form-row">
 			<div class="form-group col-md-1"></div>
 			<div class="form-group col-md-4">
-				<label for="inputEmail4">Name</label> <input type="text"
+				<label for="inputEmail4">Name</label> <input name="name" type="text"
 					class="form-control" id="name" placeholder="Name">
 			</div>
 			<div class="form-group col-md-4">
-				<label for="inputEmail4">Surname</label> <input type="text"
+				<label for="inputEmail4">Surname</label> <input name="surname" type="text"
 					class="form-control" id="surname" placeholder="Surname">
 			</div>
 			<div class="form-group col-md-3"></div>
@@ -89,13 +89,25 @@
 		<div class="form-row">
 			<div class="form-group col-md-1"></div>
 			<div class="form-group col-md-4">
-				<label for="inputPassword4">Email</label> <input type="email"
+				<label for="inputPassword4">Email</label> <input name="email" type="text"
 					class="form-control" id="mail"
 					placeholder="Email@email.mail">
 			</div>
 			<div class="form-group col-md-4">
-				<label for="inputPassword4">Password</label> <input type="password"
+				<label for="inputPassword4">Password</label> <input name="password" type="password"
 					class="form-control" id="password" placeholder="Password">
+			</div>
+		</div>
+		
+				<div class="form-row">
+			<div class="form-group col-md-1"></div>
+			<div class="form-group col-md-4">
+				<label for="inputPassword4">Phone number</label> <input type="text"
+					class="form-control" id="phoneNumber" name="phoneNumber"
+					placeholder="">
+			</div>
+			<div class="form-group col-md-4">
+				
 			</div>
 		</div>
 
@@ -104,7 +116,7 @@
 
 			<div class="form-group col-md-4">
 				<label for="inputPassword4">Birth date: </label><input type="date"
-					class="form-control" id="birthdate">
+					class="form-control" id="birthday" name="birthday">
 			</div>
 			<div class="form-group col-md-1"></div>
 
@@ -112,13 +124,13 @@
 
 				<div class="form-check form-check-inline">
 					<input class="form-check-input" type="radio"
-						name="options-outlined" id="exampleRadios1" value="accountPatient"
+						name="account" id="account" value="patient"
 						checked onclick="show1()"> <label class="form-check-label"
 						for="exampleRadios1"> Patient </label>
 				</div>
 				<div class="form-check form-check-inline">
 					<input class="form-check-input" type="radio"
-						name="options-outlined" id="exampleRadios2" value="accountDoctor"
+						name="account" id="account" value="doctor"
 						onclick="show2()"> <label class="form-check-label"
 						for="exampleRadios2"> Doctor </label>
 				</div>

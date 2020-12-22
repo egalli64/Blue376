@@ -1,5 +1,6 @@
 package dao;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -20,6 +21,26 @@ public class UserDao extends Dao<User, Integer> {
 	    query.setParameter(2, password);
 
 	    return query.getResultList();
+
+	} catch (Exception ex) {
+	    LOG.error("Can't create query: " + ex.getMessage());
+	    throw ex;
+	} finally {
+	    if (em != null) {
+		em.close();
+	    }
+	}
+    }
+
+    public void addUsers(User user) {
+	EntityManager em = null;
+
+	try {
+	    em = JPAUtilBlue.getEntityManager();
+
+	    em.getTransaction().begin();
+	    em.persist(user);
+	    em.getTransaction().commit();
 
 	} catch (Exception ex) {
 	    LOG.error("Can't create query: " + ex.getMessage());

@@ -12,7 +12,7 @@ create table users (
 	user_id integer primary key auto_increment,
     name varchar(25),
     surname varchar(25),
-    email varchar(20) unique,
+    email varchar(40) unique,
 	phonenumber varchar(20),
     birthday date not null,
     password varchar(20),
@@ -23,16 +23,25 @@ insert into users (user_id, name, surname, email, phonenumber, birthday, passwor
 insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Riccardo','Scamarcio','riccardoscamarcio@','3259994444',str_to_date('28-FEB-92','%d-%b-%y'), "ddd", 'patient');
 insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Serena','Orchideo','serenaorchideo@','3371455252',str_to_date('09-OCT-29','%d-%b-%y'), 'aaa', 'patient');
 insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Elio','Germano','eliogermano@','3417536951',str_to_date('17-MAY-49','%d-%b-%y'),'zzz', 'patient' );
-
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Alberto','Stasi','albertostasi@','3924578888',str_to_date('21-JUN-57','%d-%b-%y'),'aaa', 'doctor' );
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Federica','Pellegrini','federicapellegrini@','3407536958',str_to_date('31-DEC-65','%d-%b-%y'),'xyz', 'doctor' );
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Giuseppe','Conte','giuseppeconte@','3142524475',str_to_date('05-APR-61','%d-%b-%y'),'pof', 'doctor' );
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Laura','Pausina','laurapausina@','3945685252',str_to_date('01-MAR-58','%d-%b-%y'),'yyy', 'doctor' );
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Achille','Lauro','achillelauro@','3774122152',str_to_date('21-JAN-72','%d-%b-%y'),'lam', 'doctor' );
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Guido','Rossi','guidorossio@','3417676995',str_to_date('19-MAY-49','%d-%b-%y'),'ppp', 'doctor' );
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Piero','Fabbri','pierofabbri@','3349876954',str_to_date('17-FEB-49','%d-%b-%y'),'iii', 'doctor' );
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Martina','Isolata','martinaisolata@','3351967458',str_to_date('06-MAY-51','%d-%b-%y'),'uuu', 'doctor' );
+insert into users (name, surname, email, phonenumber, birthday, password, account) values ('Marcello','Speranza','marcellosperanzai@','3487654331',str_to_date('17-APR-49','%d-%b-%y'),'mmm', 'doctor' );
 commit;
 
 create table doctors(
 	doctor_id integer primary key auto_increment,
     specialization varchar(25),
-    street varchar(25)
+    street varchar(25),
+     constraint doctor_id foreign key(doctor_id) references users(user_id)
 
 );
-insert into doctors (doctor_id, specialization,street) values ('101','Urologa',"Via Togliatti 48");
+insert into doctors (doctor_id, specialization,street) values ('905','Urologa',"Via Togliatti 48");
 insert into doctors (specialization,street) values ('Andrologo', "Via Emilia 56");
 insert into doctors (specialization,street) values('Dentista', "Piazza Roma 7");
 insert into doctors (specialization,street) values ('Psicologa', "Via Novembre 4");
@@ -54,9 +63,9 @@ create table doctor_user(
 );
 
 
-insert into doctor_user values (101, 901);
-insert into doctor_user values (101, 902);
-insert into doctor_user values (102, 903);
+insert into doctor_user values (905, 901);
+insert into doctor_user values (905, 902);
+insert into doctor_user values (908, 903);
 
 commit;
 
@@ -64,7 +73,7 @@ create table visits(
 	visit_id integer primary key auto_increment,
 	user_id integer,
 	doctor_id integer,
-    visit_date date not null,
+    visit_date date not null, -- timestamp
     visit_hour varchar(20) not null,
     review char 
     constraint visits_review_ck check ( review in ('A', 'B', 'C', 'D', 'E')) default "A",
@@ -73,9 +82,9 @@ create table visits(
     constraint visits_docpat_fk foreign key(doctor_id, user_id) references doctor_user(doctor_id, user_id)
 );
 
-insert into visits (visit_id, user_id, doctor_id, visit_date, visit_hour, review) values ('10001','901','101',str_to_date('13-DEC-19','%d-%b-%y'),'16:00','B');
-insert into visits (user_id, doctor_id, visit_date, visit_hour, review) values ('902','101',str_to_date('15-DEC-19','%d-%b-%y'),'11:00','A');
-insert into visits (user_id, doctor_id, visit_date, visit_hour, review) values ('903','102',str_to_date('16-DEC-19','%d-%b-%y'),'17:00','E');
+insert into visits (visit_id, user_id, doctor_id, visit_date, visit_hour, review) values ('10001','901','905',str_to_date('13-DEC-19','%d-%b-%y'),'16:00','B');
+insert into visits (user_id, doctor_id, visit_date, visit_hour, review) values ('902','905',str_to_date('15-DEC-19','%d-%b-%y'),'11:00','A');
+insert into visits (user_id, doctor_id, visit_date, visit_hour, review) values ('903','908',str_to_date('16-DEC-19','%d-%b-%y'),'17:00','E');
 
 commit;
 
