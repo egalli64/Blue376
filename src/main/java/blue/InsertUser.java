@@ -51,7 +51,14 @@ public class InsertUser extends HttpServlet {
 	System.out.println(account);
 
 	UserDao userDao = new UserDao();
-	userDao.addUsers(user);
+
+	try {
+	    userDao.addUsers(user);
+	} catch (Exception ex) {
+	    LOG.error("Can't insert user");
+	    request.getRequestDispatcher("/index.html").forward(request, response);
+	    return;
+	}
 
 	if (account.equals("doctor")) {
 	    String specialization = request.getParameter("specialization");
@@ -65,8 +72,9 @@ public class InsertUser extends HttpServlet {
 	    try {
 		doctorDao.addDoctors(doctor);
 	    } catch (Exception ex) {
-		request.getRequestDispatcher("/index.html").forward(request, response);
 		LOG.error("Can't insert doctor");
+		request.getRequestDispatcher("/index.html").forward(request, response);
+		return;
 
 	    }
 	}
