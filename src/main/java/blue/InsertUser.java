@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import dao.Dao;
 import dao.Doctor;
 import dao.DoctorDao;
 import dao.User;
@@ -21,6 +25,7 @@ import dao.UserDao;
 @WebServlet("/login/registration")
 public class InsertUser extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    static protected final Logger LOG = LoggerFactory.getLogger(Dao.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
@@ -44,7 +49,7 @@ public class InsertUser extends HttpServlet {
 	user.setAccount(account);
 
 	System.out.println(account);
-	
+
 	UserDao userDao = new UserDao();
 	userDao.addUsers(user);
 
@@ -57,7 +62,13 @@ public class InsertUser extends HttpServlet {
 	    doctor.setStreet(street);
 	    DoctorDao doctorDao = new DoctorDao();
 
-	    doctorDao.addDoctors(doctor);
+	    try {
+		doctorDao.addDoctors(doctor);
+	    } catch (Exception ex) {
+		request.getRequestDispatcher("/index.html").forward(request, response);
+		LOG.error("Can't insert doctor");
+
+	    }
 	}
 
 	request.getRequestDispatcher("/index.html").forward(request, response);

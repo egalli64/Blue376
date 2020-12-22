@@ -4,8 +4,8 @@ use blue;
 
 drop table if exists visits;
 drop table if exists doctor_user;
-drop table if exists users;
 drop table if exists doctors;
+drop table if exists users;
 
 
 create table users (
@@ -38,18 +38,19 @@ create table doctors(
 	doctor_id integer primary key auto_increment,
     specialization varchar(25),
     street varchar(25),
-     constraint doctor_id foreign key(doctor_id) references users(user_id)
+    user_id integer,
+     constraint doctor_id foreign key(user_id) references users(user_id)
 
 );
-insert into doctors (doctor_id, specialization,street) values ('905','Urologa',"Via Togliatti 48");
-insert into doctors (specialization,street) values ('Andrologo', "Via Emilia 56");
-insert into doctors (specialization,street) values('Dentista', "Piazza Roma 7");
-insert into doctors (specialization,street) values ('Psicologa', "Via Novembre 4");
-insert into doctors (specialization,street) values ('Neourochirurgo', "Via Piero 88");
-insert into doctors (specialization,street) values ('Ginecologa', "Via Kennedy 63");
-insert into doctors (specialization,street) values ('Cardiologo',"Via Trieste 2");
-insert into doctors (specialization,street) values ('Dermatologa', "Piazza di Spagna 99");
-insert into doctors (specialization,street) values ('Oculista', "Via Trento 33");
+insert into doctors (doctor_id, specialization,street, user_id) values ('101','Urologa',"Via Togliatti 48", '905');
+insert into doctors (specialization,street, user_id) values ('Andrologo', "Via Emilia 56", '906');
+insert into doctors (specialization,street, user_id) values('Dentista', "Piazza Roma 7", '907');
+insert into doctors (specialization,street, user_id) values ('Psicologa', "Via Novembre 4", '908');
+insert into doctors (specialization,street, user_id) values ('Neourochirurgo', "Via Piero 88", '909');
+insert into doctors (specialization,street, user_id) values ('Ginecologa', "Via Kennedy 63", '910');
+insert into doctors (specialization,street, user_id) values ('Cardiologo',"Via Trieste 2", '911');
+insert into doctors (specialization,street, user_id) values ('Dermatologa', "Piazza di Spagna 99", '912');
+insert into doctors (specialization,street, user_id) values ('Oculista', "Via Trento 33", '913');
 
 commit;
 
@@ -63,9 +64,9 @@ create table doctor_user(
 );
 
 
-insert into doctor_user values (905, 901);
-insert into doctor_user values (905, 902);
-insert into doctor_user values (908, 903);
+insert into doctor_user values (101, 901);
+insert into doctor_user values (101, 902);
+insert into doctor_user values (104, 903);
 
 commit;
 
@@ -82,9 +83,9 @@ create table visits(
     constraint visits_docpat_fk foreign key(doctor_id, user_id) references doctor_user(doctor_id, user_id)
 );
 
-insert into visits (visit_id, user_id, doctor_id, visit_date, visit_hour, review) values ('10001','901','905',str_to_date('13-DEC-19','%d-%b-%y'),'16:00','B');
-insert into visits (user_id, doctor_id, visit_date, visit_hour, review) values ('902','905',str_to_date('15-DEC-19','%d-%b-%y'),'11:00','A');
-insert into visits (user_id, doctor_id, visit_date, visit_hour, review) values ('903','908',str_to_date('16-DEC-19','%d-%b-%y'),'17:00','E');
+insert into visits (visit_id, user_id, doctor_id, visit_date, visit_hour, review) values ('10001','901','101',str_to_date('13-DEC-19','%d-%b-%y'),'16:00','B');
+insert into visits (user_id, doctor_id, visit_date, visit_hour, review) values ('902','101',str_to_date('15-DEC-19','%d-%b-%y'),'11:00','A');
+insert into visits (user_id, doctor_id, visit_date, visit_hour, review) values ('903','104',str_to_date('16-DEC-19','%d-%b-%y'),'17:00','E');
 
 commit;
 
