@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.Doctor;
+import dao.DoctorDao;
 import dao.User;
 import dao.UserDao;
 
@@ -41,8 +43,22 @@ public class InsertUser extends HttpServlet {
 	user.setPassword(password);
 	user.setAccount(account);
 
+	System.out.println(account);
+	
 	UserDao userDao = new UserDao();
 	userDao.addUsers(user);
+
+	if (account.equals("doctor")) {
+	    String specialization = request.getParameter("specialization");
+	    String street = request.getParameter("street");
+	    Doctor doctor = new Doctor();
+	    doctor.setUserId(user.getId());
+	    doctor.setSpecialization(specialization);
+	    doctor.setStreet(street);
+	    DoctorDao doctorDao = new DoctorDao();
+
+	    doctorDao.addDoctors(doctor);
+	}
 
 	request.getRequestDispatcher("/index.html").forward(request, response);
 	return;

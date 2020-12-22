@@ -142,13 +142,13 @@
 			<div class="form-row">
 				<div class="form-group col-md-1"></div>
 				<div class="form-group col-md-4">
-					<label for="inputPassword4">Address</label> <input type="text"
+					<label for="inputPassword4">Address</label> <input name="street" type="text"
 						class="form-control leo" id="address"
 						placeholder="Via Maurizio Quadrio, n. 17, MI">
 				</div>
 				<div class="form-group col-md-4">
 					<label for="inputPassword4">Specialization</label> <input
-						type="text" class="form-control leo" id="specialization"
+						name="specialization" type="text" class="form-control leo" id="specialization"
 						placeholder="Specialization">
 				</div>
 			</div>
